@@ -1,6 +1,6 @@
 Playlist maker developed using the MERN Stack. Create, share, fork playlists and listen to some tunes! Voting system lets you choose a song of the day to be added to community curated playlists with songs added based off user votes.  [LIVE DEMO](https://marvins-studio.herokuapp.com/app/home)
 
-Developed Early 2021 (Group)
+Developed Early 2021 (3 Person Group)
 
 ![alt text](https://i.imgur.com/XrX2yy3.png)
 ![alt text](https://i.imgur.com/12kMuT7.png)
