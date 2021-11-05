@@ -98,6 +98,7 @@ passport.use(new GoogleStrategy({
             if (currentUser) {
                 uid = { user: currentUser._id }
                 console.log(currentUser.email);
+                console.log("hi")
                 return done(null, currentUser)
             }
             else {
