@@ -12,20 +12,20 @@ class AlbumSong extends Component {
         if (runtime_sec.length == 1)
             runtime_sec = "0" + runtime_sec;
         return (
-            <div className="albumrow "style={{ }}>
-                <div className="row text-light ml-5" style={{ fontWeight: 450, paddingTop:6}}>
+            <div className="albumrow " style={{}}>
+                <div className="row text-light ml-5" style={{ fontWeight: 450, paddingTop: 6 }}>
                     <a id="songName"
                         onClick={this.props.handleSongChange.bind(this, song)}
                         className="text-light col-6 text-nowrap overflow-hidden overflow-ellipsis"
-                        style={{cursor: 'pointer'}}
+                        style={{ cursor: 'pointer' }}
                     ><h5>{song.name}</h5></a>
                     <label id="runTime" className="col-3 text-nowrap overflow-hidden overflow-ellipses" ><h5>{runtime_min + ":" + runtime_sec}</h5></label>
 
-                    <Icon.PlusCircle className="addsong btn btn-outline-primary bg-transparent border-0 mb--1 p-1" style ={{fontSize:30}} onClick={this.props.handleShow.bind(this, song)}/>
-                     
-                    <Icon.List className="quesong btn btn-outline-primary bg-transparent border-0 p-1 ml-4 " style={{fontSize:37, marginTop:-3}} onClick={this.props.handleQueueSong.bind(this, song)}/>
+                    <Icon.PlusCircle className="addsong btn btn-outline-primary bg-transparent border-0 mb--1 p-1" style={{ fontSize: 30 }} onClick={this.props.handleShow.bind(this, song)} />
+
+                    <Icon.List className="quesong btn btn-outline-primary bg-transparent border-0 p-1 ml-4 " style={{ fontSize: 37, marginTop: -3 }} onClick={this.props.handleQueueSong.bind(this, song)} />
                 </div>
-                <div className="divider song-divider"/>
+                <div className="divider song-divider" />
 
             </div>
         )

@@ -10,7 +10,7 @@ var songType = require('./PlaylistSchemas').getType('Song')
 
 var sotdType = new GraphQLObjectType({
     name: 'SOTD',
-    fields: function() {
+    fields: function () {
         return {
             song: {
                 type: songType
@@ -24,10 +24,10 @@ var sotdType = new GraphQLObjectType({
 
 var communityType = new GraphQLObjectType({
     name: 'Community',
-    fields: function() {
-       return{
+    fields: function () {
+        return {
             _id: {
-               type: GraphQLString
+                type: GraphQLString
             },
             communityPlaylists: {
                 type: new GraphQLList(playlistType)
@@ -60,19 +60,19 @@ var communityType = new GraphQLObjectType({
 
 var queryType = new GraphQLObjectType({
     name: 'Query',
-    fields: function() {
+    fields: function () {
         return {
             community: {
                 type: communityType,
-                resolve: function() {
+                resolve: function () {
                     const community = CommunityModel.find().exec()
-                    if(!community) throw new Error('Error')
+                    if (!community) throw new Error('Error')
                     return community
                 }
             },
             communityPlaylists: {
                 type: new GraphQLList(playlistType),
-                resolve: function() {
+                resolve: function () {
                     const communityPlaylists = CommunityModel.find().exec()
                     if (!communityPlaylists) throw new Error('Error')
                     return communityPlaylists

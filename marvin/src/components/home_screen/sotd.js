@@ -54,17 +54,17 @@ class sotd extends Component {
 
     handleSOTDVote = (sotds, index, user, updateSOTD, updateUserSOTD, updateUserPoints) => {
         console.log("voted!");
-        let userPoints=user.userPoints
+        let userPoints = user.userPoints
         if (user.votedSOTD - 1 === index) {
             sotds[index].sotdVotes -= 1;
             index = 0
-            userPoints-=3
-           //remove points
+            userPoints -= 3
+            //remove points
         }
         if (user.votedSOTD === 0) {
             sotds[index].sotdVotes += 1;
             index += 1;
-            userPoints+=3
+            userPoints += 3
             //add points
         }
         sotds.forEach(sotd => {
@@ -77,7 +77,7 @@ class sotd extends Component {
                 id: user._id,
                 userPoints: userPoints
             }
-        })            
+        })
         updateSOTD({
             variables: {
                 id: "5fc69c8b61fdeb5194781f2f",
@@ -109,7 +109,7 @@ class sotd extends Component {
                                 {(updateSOTD, { loading, error }) => (
                                     <div>
                                         <div className='pt-2 text-center d-block overflow-hidden text-nowrap text-truncate' style={{ textOverflow: 'ellipsis' }}>
-                                            <a className='h5 text-playlist' onClick={this.props.handleSongChange.bind(this, song)} style={{width:"70%"}}>{song.title}</a>
+                                            <a className='h5 text-playlist' onClick={this.props.handleSongChange.bind(this, song)} style={{ width: "70%" }}>{song.title}</a>
                                             <div className='position-relative mb-3  '>
                                                 <img className='rounded' src={song.albumArt} style={{ height: 150, width: 150 }} />
                                             </div>

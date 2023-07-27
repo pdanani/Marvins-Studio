@@ -87,7 +87,7 @@ class HomeScreen extends React.Component {
                         sotd2 = data.community.song2;
                         sotd3 = data.community.song3;
                         genre = data.community.gotwPlaylist.genre
-                        recentlyPlayed= this.props.user ? this.props.user.recentlyPlayed.slice(-4) : []                   
+                        recentlyPlayed = this.props.user ? this.props.user.recentlyPlayed.slice(-4) : []
                     }
                     return (
                         <div className='container h-100'>
@@ -97,7 +97,7 @@ class HomeScreen extends React.Component {
                                         src="https://pixy.org/src/68/680088.jpg" />
                                     <span className='h4 position-absolute text-black' style={{ top: 5, left: 20 }}>Genre of the Week</span>
                                     {/* <Icon.InfoCircle data-toggle="tooltip" color="black" className='position-absolute text-black' style={{top: 5, right: 30}}> </Icon.InfoCircle> */}
-                                    <span className='display-3 w-100 font-weight-bold text-center position-absolute' style={{ top: 50, left: 10, color: '#3d8af7', fontSize:70, WebkitTextStroke: '1.2px black'}}>{genre}</span>
+                                    <span className='display-3 w-100 font-weight-bold text-center position-absolute' style={{ top: 50, left: 10, color: '#3d8af7', fontSize: 70, WebkitTextStroke: '1.2px black' }}>{genre}</span>
                                 </div>
                             </div>
                             <div className='row mt-4 px-5 mx-2'>
@@ -124,7 +124,7 @@ class HomeScreen extends React.Component {
                                 <div>
                                     <div className='row h4 ml-3 text-white mt-4'>Recently Played</div>
                                     <div className='divider' ></div>
-                                    <div className='row text-wrap w-100' style={{paddingRight:'20%', paddingLeft: 20}}>
+                                    <div className='row text-wrap w-100' style={{ paddingRight: '20%', paddingLeft: 20 }}>
                                         {recentlyPlayed.map((playlistID, index) => (
                                             <ViewedPlaylistLinks playlistID={playlistID} key={index} myProfile={true} />
                                         ))}

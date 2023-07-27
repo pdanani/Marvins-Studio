@@ -49,31 +49,31 @@ class AlbumScreen extends React.Component {
 	handleQueueAlbum = (songs) => {
 		let ss = songs;
 		let song;
-		for (let x = 0; x < ss.length; x++ ) {
+		for (let x = 0; x < ss.length; x++) {
 			song = this.songAddArt(ss[x]);
 			this.props.handleQueueSong(song);
 		}
 	}
 
 	songAddArt(preSong) {
-        let song = JSON.parse(JSON.stringify(preSong));
+		let song = JSON.parse(JSON.stringify(preSong));
 		song["albumArt"] = song.thumbnails[0].url;
 		song["title"] = song.name;
 		song["artistName"] = song.artistNames;
-    	return song;
+		return song;
 	}
 
 	handlePlayPlaylistP = (songs) => {
 		let editedSongs = [];
 		let song;
-		for (let x = 0; x< songs.length; x++) {
+		for (let x = 0; x < songs.length; x++) {
 			song = this.songAddArt(songs[x]);
 			editedSongs.push(song);
 		}
 		this.props.handlePlayPlaylist(editedSongs);
 
 	}
-	
+
 	componentWillUnmount = () => {
 		console.log("ALBUMSCREEN TO UNMOUNT");
 	}
@@ -105,7 +105,7 @@ class AlbumScreen extends React.Component {
 										</svg>
 									</button>
 
-									<Icon.List className='btn btn-outline-primary border-0 bg-transparent' style={{ fontSize: 80 }} onClick={this.handleQueueAlbum.bind(this, songs)}/>
+									<Icon.List className='btn btn-outline-primary border-0 bg-transparent' style={{ fontSize: 80 }} onClick={this.handleQueueAlbum.bind(this, songs)} />
 
 
 									<Icon.PlusCircle className='btn btn-outline-primary border-0 bg-transparent' style={{ fontSize: 65 }} onClick={() => this.handleShow(null, 1)} />
@@ -135,7 +135,7 @@ class AlbumScreen extends React.Component {
 					{songs.map((song, index) => (
 						<AlbumSong key={index} style={{ cursor: 'pointer' }}
 							handleSongChange={this.props.handleSongChange} handleQueueSong={this.props.handleQueueSong}
-							song={song} handleShow={() => this.handleShow(song, 0)} songAddArt={this.songAddArt}/>
+							song={song} handleShow={() => this.handleShow(song, 0)} songAddArt={this.songAddArt} />
 					))}
 
 				</div>
